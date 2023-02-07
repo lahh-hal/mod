@@ -1,53 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Minecraft Block Mod Creator</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-      .block {
-        width: 50px;
-        height: 50px;
-        display: inline-block;
-        border: 1px solid black;
-        margin: 10px;
-      }
-    </style>
+    <meta charset="utf-8">
+    <title>Minecraft Mod Maker</title>
   </head>
   <body>
-    <h1>Minecraft Block Mod Creator</h1>
-    <p>Use the blocks below to create your own Minecraft mod:</p>
-    <div id="block-container">
-      <div class="block" data-block-type="dirt"></div>
-      <div class="block" data-block-type="stone"></div>
-      <div class="block" data-block-type="wood"></div>
-      <div class="block" data-block-type="leaves"></div>
-    </div>
-    <br><br>
-    <form id="mod-form">
-      <label for="mod-name">Mod Name:</label>
-      <input type="text" id="mod-name" name="mod-name" required>
-      <br><br>
-      <label for="mod-description">Mod Description:</label>
-      <textarea id="mod-description" name="mod-description" required></textarea>
-      <br><br>
-      <input type="submit" value="Create Mod">
-    </form>
-    <br><br>
-    <div id="mod-output"></div>
-    <script>
-      $(".block").click(function() {
-        $(this).toggleClass("selected");
-      });
-
-      $("#mod-form").submit(function(e) {
-        e.preventDefault();
-        var modName = $("#mod-name").val();
-        var modDescription = $("#mod-description").val();
-        var selectedBlocks = $(".block.selected").map(function() {
-          return $(this).data("block-type");
-        }).get();
-        $("#mod-output").html("<h2>" + modName + "</h2><p>Description: " + modDescription + "</p><p>Selected Blocks: " + selectedBlocks.join(", ") + "</p>");
-      });
-    </script>
+    <header>
+      <h1>Minecraft Mod Maker</h1>
+      <nav>
+        <ul>
+          <li><a href="#create-mod">Create Mod</a></li>
+          <li><a href="#my-mods">My Mods</a></li>
+          <li><a href="#help">Help</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="create-mod">
+        <h2>Create Your Own Mod</h2>
+        <p>Use our easy to use drag and drop interface to create unique and exciting mods for Minecraft.</p>
+        <a href="#" class="btn">Start Creating</a>
+      </section>
+      <section id="my-mods">
+        <h2>My Mods</h2>
+        <p>View and manage all of your created mods in one place.</p>
+        <a href="#" class="btn">View My Mods</a>
+      </section>
+      <section id="help">
+        <h2>Help</h2>
+        <p>Need help creating your mod? Check out our helpful guides and tutorials.</p>
+        <a href="#" class="btn">Get Help</a>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; Minecraft Mod Maker 2020</p>
+    </footer>
   </body>
-</html>
+</html> 
